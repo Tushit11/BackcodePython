@@ -6,6 +6,10 @@ from rembg import remove
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def index():
+    return 'hello'
+
 @app.route('/remove_background', methods=['POST'])
 def remove_background():
     if 'image' not in request.files:
